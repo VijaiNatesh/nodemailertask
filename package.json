@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "node mailer task for interview",
   "main": "index.js",
+  "engines": {
+    "node": "14.17.6",
+    "npm": "7.24.1"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
