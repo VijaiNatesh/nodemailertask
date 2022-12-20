@@ -76,4 +76,16 @@ userRoute.post('/forgotpassword', async (req, res) => {
     }
 })
 
+userRoute.put('/changepassword/:id', async(req,res)=> {
+    const user = await User.findById(req.params.id)
+    if(user.password === req.body.token){
+        await User.findByIdAndUpdate(req.params.id, req.body)
+        res.send("password changed")
+    }
+    else{
+        res.send("Token not matching")
+    }
+    
+})
+
 module.exports = userRoute;
